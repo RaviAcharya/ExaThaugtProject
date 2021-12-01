@@ -42,7 +42,7 @@ class UserDetails extends Component{
        let temp = this.state.users;
        temp.push(this.state.user); 
        this.setState(
-           {users:temp}
+           {users:temp,user:{}}
        )  
  
     }
