@@ -67,7 +67,7 @@ class UserDetails extends Component{
                  <input type='date' value={this.state.user.dateOfBirth} onChange={this.handleDateOfBirthChange}></input>
              </div>
          </form>
-
+        
          <button onClick={()=>this.changeShowDisplay()}>Save</button>
          {this.state.users.map(user=>{return <Display key={user.firstname} {...user}/>})}
         </div>
