@@ -9,7 +9,7 @@ class UserDetails extends Component{
                 firstname :'',
                 lastname  :'',
                 emailId   :'',
-                dateOfBirth : new Date()
+                dateOfBirth : Date
             },
             showDisplay:false,
             users : []
@@ -37,6 +37,7 @@ class UserDetails extends Component{
         let tempUser = this.state.user;
         tempUser.dateOfBirth=event.target.value;
         this.setState({user:tempUser});
+        console.log(this.state.user.dateOfBirth);
     }
     changeShowDisplay=(event)=>{
        let temp = this.state.users;
@@ -65,12 +66,12 @@ class UserDetails extends Component{
              </div>
              <div>
                  Date Of Birth:
-                 <input type='date' value={this.state.user.dateOfBirth} onchange={this.handleDateOfBirthChange}></input>
+                 <input type='date' value={this.state.user.dateOfBirth} onChange={this.handleDateOfBirthChange}></input>
              </div>
          </form>
 
          <button onClick={()=>this.changeShowDisplay()}>Save</button>
-         {this.state.users.map(user=>{return <Display {...user}/>})}
+         {this.state.users.map(user=>{return <Display key={user.firstname} {...user}/>})}
         </div>
         )
     }
