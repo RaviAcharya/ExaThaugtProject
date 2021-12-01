@@ -37,7 +37,6 @@ class UserDetails extends Component{
         let tempUser = this.state.user;
         tempUser.dateOfBirth=event.target.value;
         this.setState({user:tempUser});
-        console.log(this.state.user.dateOfBirth);
     }
     changeShowDisplay=(event)=>{
        let temp = this.state.users;
@@ -45,7 +44,6 @@ class UserDetails extends Component{
        this.setState(
            {users:temp,user:{}}
        )  
- 
     }
 
     render(){
