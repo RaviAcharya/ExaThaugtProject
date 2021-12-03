@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import Display from './Display';
+import './DisplayStyle.css'
 
 class UserDetails extends Component{
     constructor(props){
@@ -9,17 +10,17 @@ class UserDetails extends Component{
                 firstname :'',
                 lastname  :'',
                 emailId   :'',
-                dateOfBirth : Date
+                dateOfBirth :''
             },
             showDisplay:false,
-            users : []
+            users : [],
         }
     }
     handleFirstnameChange = (event)=>{
         let tempUser = this.state.user;
         tempUser.firstname=event.target.value;
         this.setState({user:tempUser});
-        
+   
     }
 
     handleLastnameChange = (event)=>{
@@ -45,31 +46,39 @@ class UserDetails extends Component{
            {users:temp,user:{}}
        )  
     }
-
     render(){
         return(
         <div>
          <form>
-            <div>
-                  FirstName:
-                  <input type='text' value={this.state.user.firstname} onChange={this.handleFirstnameChange}></input> 
-            </div>
-            <div>      
-                  LastName:
-                  <input type='text' value={this.state.user.lastname} onChange={this.handleLastnameChange}></input>
-            </div>      
-             <div>
-                 EmailId:
-                 <input type='text' value={this.state.user.emailId} onChange={this.handleEmailidChange}></input>
+             <div className='fname'>
+                <lable >FirstName:</lable>
+                <input type='text' value={this.state.user.firstname} onChange={this.handleFirstnameChange}></input>  
+             </div>   
+             <div className='lname'>
+                <lable>LastName:</lable>
+                <input type='text' value={this.state.user.lastname} onChange={this.handleLastnameChange}></input>
              </div>
-             <div>
-                 Date Of Birth:
-                 <input type='date' value={this.state.user.dateOfBirth} onChange={this.handleDateOfBirthChange}></input>
+             <div className='email'> 
+                <lable> Email-Id:</lable>
+                <input type='text' value={this.state.user.emailId} onChange={this.handleEmailidChange}></input>
+             </div>
+             <div className='dob'>
+                <lable>Date Of Birth:</lable>
+                <input type='date' value={this.state.user.dateOfBirth} onChange={this.handleDateOfBirthChange}></input>
              </div>
          </form>
-        
-         <button onClick={()=>this.changeShowDisplay()}>Save</button>
-         {this.state.users.map(user=>{return <Display key={user.firstname} {...user}/>})}
+         <button onClick={()=>this.changeShowDisplay()} className='save'>Save</button>
+         {/*<table>
+            <tr>
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>EmailId</th>
+              <th>DateOfBirth</th>
+            </tr>
+         </table>*/}
+         <div className='div'>
+            {this.state.users.map((user,index)=>{return <Display key={user.firstname} {...user}/>})}
+         </div>
         </div>
         )
     }

@@ -1,0 +1,39 @@
+.fcomp{
+    background-color: rgb(14, 13, 13);
+}
+.fname {
+    position: absolute;
+    left: 20%;
+    top:10%;
+}
+.lname {
+    position: absolute;
+    right: 20%;
+    top:10%;
+}
+.email {
+    position: absolute;
+    left: 20%;
+    top: 15%;
+}
+.dob{
+    position: absolute;
+    right: 20%;
+    top:15%;
+}
+.save{
+    position:absolute;
+    top:20%;
+}
+.div{
+    /*top : 10%;
+    position: absolute;
+    margin-top: 160px;
+    left : 40%;*/
+    margin: 150px;
+    border: 1px solid #9cb99d;
+    background-color: rgb(248, 245, 240);
+}
+.font{
+    font-size: 5px;
+}
