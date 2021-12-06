@@ -12,7 +12,6 @@ class UserDetails extends Component{
                 emailId   :'',
                 dateOfBirth :''
             },
-            showDisplay:false,
             users : [],
         }
     }
@@ -44,7 +43,8 @@ class UserDetails extends Component{
        temp.push(this.state.user); 
        this.setState(
            {users:temp,user:{}}
-       )  
+       ) 
+      
     }
     render(){
         return(
@@ -68,17 +68,19 @@ class UserDetails extends Component{
              </div>
          </form>
          <button onClick={()=>this.changeShowDisplay()} className='save'>Save</button>
-         {/*<table>
-            <tr>
-              <th>FirstName</th>
-              <th>LastName</th>
-              <th>EmailId</th>
-              <th>DateOfBirth</th>
-            </tr>
-         </table>*/}
-         <div className='div'>
-            {this.state.users.map((user,index)=>{return <Display key={user.firstname} {...user}/>})}
-         </div>
+         <table className='table'>
+           <thead>
+               <tr>
+                   <th className='thborder'>FirstName</th>
+                   <th className='thborder'>LastName</th>
+                   <th className='thborder'>EmailId</th>
+                   <th className='thborder'>DateOfBirth</th>
+               </tr>
+           </thead>
+           <tbody>
+            {this.state.users.map((user)=>{  return<Display key={user.lastname} {...user}/>})}
+           </tbody>
+         </table>
         </div>
         )
     }

@@ -2,10 +2,12 @@ import React, {Component} from "react";
 import './DisplayStyle.css'
 function Display(props){
         return(
-               <div>
-                   <p>{props.firstname} ----  {props.lastname} ---- {props.emailId} ---- {props.dateOfBirth}</p>
-                </div>
-    
+                   <tr>
+                     <td className='thborder'>{props.firstname}</td>
+                     <td className='thborder'>{props.lastname}</td>
+                     <td className='thborder'>{props.emailId}</td>
+                     <td className='thborder'>{props.dateOfBirth}</td>
+                   </tr>
         )
 
 }
